@@ -1,0 +1,32 @@
+# Logfile created on 2017-11-15 15:43:01 -0500 by logger.rb/56815
+I, [2017-11-15T15:43:13.830911 #44619]  INFO -- : Started GET "/carts/13" for 127.0.0.1 at 2017-11-15 15:43:13 -0500
+D, [2017-11-15T15:43:14.041378 #44619] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+I, [2017-11-15T15:43:14.048866 #44619]  INFO -- : Processing by CartsController#show as HTML
+I, [2017-11-15T15:43:14.048915 #44619]  INFO -- :   Parameters: {"id"=>"13"}
+D, [2017-11-15T15:43:14.066872 #44619] DEBUG -- :   [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+I, [2017-11-15T15:43:14.074610 #44619]  INFO -- :   Rendering carts/show.html.erb within layouts/application
+D, [2017-11-15T15:43:14.088693 #44619] DEBUG -- :   [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = $1[0m  [["cart_id", 13]]
+D, [2017-11-15T15:43:14.103483 #44619] DEBUG -- :   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+D, [2017-11-15T15:43:14.108951 #44619] DEBUG -- :   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+D, [2017-11-15T15:43:14.109786 #44619] DEBUG -- :   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+I, [2017-11-15T15:43:14.110021 #44619]  INFO -- :   Rendered carts/show.html.erb within layouts/application (35.3ms)
+I, [2017-11-15T15:43:14.294044 #44619]  INFO -- : Completed 200 OK in 245ms (Views: 218.4ms | ActiveRecord: 8.0ms)
+
+
+I, [2017-11-15T15:43:20.045039 #44619]  INFO -- : Started GET "/carts/wobble" for 127.0.0.1 at 2017-11-15 15:43:20 -0500
+I, [2017-11-15T15:43:20.045971 #44619]  INFO -- : Processing by CartsController#show as HTML
+I, [2017-11-15T15:43:20.046015 #44619]  INFO -- :   Parameters: {"id"=>"wobble"}
+D, [2017-11-15T15:43:20.055999 #44619] DEBUG -- :   [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+E, [2017-11-15T15:43:20.056415 #44619] ERROR -- : Attempt to access invalid cart wobble
+I, [2017-11-15T15:43:20.056837 #44619]  INFO -- : Redirected to http://localhost:3000/
+I, [2017-11-15T15:43:20.056975 #44619]  INFO -- : Completed 302 Found in 11ms (ActiveRecord: 4.6ms)
+
+
+I, [2017-11-15T15:43:20.059713 #44619]  INFO -- : Started GET "/" for 127.0.0.1 at 2017-11-15 15:43:20 -0500
+I, [2017-11-15T15:43:20.061924 #44619]  INFO -- : Processing by StoreController#index as HTML
+I, [2017-11-15T15:43:20.066441 #44619]  INFO -- :   Rendering store/index.html.erb within layouts/application
+D, [2017-11-15T15:43:20.068258 #44619] DEBUG -- :   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+I, [2017-11-15T15:43:20.088601 #44619]  INFO -- :   Rendered store/index.html.erb within layouts/application (22.0ms)
+I, [2017-11-15T15:43:20.103728 #44619]  INFO -- : Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.7ms)
+
+
